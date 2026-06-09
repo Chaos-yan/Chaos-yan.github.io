@@ -1,363 +1,116 @@
 window.PORTFOLIO_DATA = {
   "site": {
-    "title": "YAN SUNHENG",
-    "subtitle": "Game Music Designer & Composer",
-    "tagline": "Crafting Immersive Sonic Worlds for Interactive Media",
-    "language": "zh",
-    "description": "颜孙恒 | 游戏音乐设计师 - 专注于游戏交互音乐、电子音乐与管弦乐创作"
-  },
-  "hero": {
-    "name": "颜孙恒",
-    "name_en": "Yan Sunheng",
-    "title": "游戏音乐设计师",
-    "title_en": "Game Music Designer & Composer",
-    "intro": "专注于游戏交互音乐设计、电子音乐制作与管弦乐编曲。擅长运用 Wwise 音频中间件构建沉浸式游戏音效体验，致力于在交互媒体中创造独特的声音世界。",
-    "intro_en": "Specializing in interactive game music design, electronic music production, and orchestral arrangement. Proficient in building immersive game audio experiences with Wwise audio middleware, dedicated to creating unique sonic worlds in interactive media.",
-    "location": "深圳 / 全球远程",
-    "location_en": "Shenzhen / Global Remote"
-  },
-  "about": {
-    "bio": "硕士毕业于爱丁堡大学作曲专业，本科毕业于浙江音乐学院音乐设计与制作专业（GPA 3.95，专业前5%）。拥有西山居游戏音乐制作经历及腾讯《英雄联盟手游》音频策划经验。",
-    "bio_en": "MSc in Composition from the University of Edinburgh, B.A. in Music Design & Production from Zhejiang Conservatory of Music (GPA 3.95, Top 5%). Professional experience at Seasun Games and Tencent's League of Legends: Wild Rift as an audio designer.",
-    "highlights": [
-      {
-        "label": "Wwise 音频中间件",
-        "label_en": "Wwise Audio Middleware"
-      },
-      {
-        "label": "Unity / UE5 引擎经验",
-        "label_en": "Unity / UE5 Engine"
-      },
-      {
-        "label": "AI 音频工具创新",
-        "label_en": "AI Audio Innovation"
-      },
-      {
-        "label": "英文专业沟通 (雅思6.5)",
-        "label_en": "English Proficient (IELTS 6.5)"
-      }
-    ]
+    "title": "YS — Game Music Designer",
+    "description": "Game Music Portfolio"
   },
   "works": {
     "audio": [
       {
         "id": "deep-space-pulse",
         "title": "Deep Space Pulse",
-        "title_zh": "游戏交互音乐设计 — Deep Space Pulse",
-        "category": "Interactive Game Music",
-        "category_zh": "游戏交互音乐设计",
+        "title_zh": "Deep Space Pulse",
+        "category": "Interactive Game Music · Wwise",
+        "category_zh": "游戏交互音乐设计 · Wwise",
         "file": "assets/audio/deep-space-pulse.mp3",
         "poster": "assets/images/poster-deep-space.svg",
         "duration": "3:01",
-        "description": "一首为科幻题材游戏设计的交互式战斗音乐。以深沉的低频脉冲为核心驱动力，融合工业感电子音色与动态层次变化。BPM 140 的高速节奏营造紧张激烈的战斗氛围，多层次的合成器音色设计展现了对 Wwise 交互音乐框架的深度理解。",
-        "description_en": "An interactive combat music piece designed for sci-fi games. Driven by deep low-frequency pulses, blending industrial electronic timbres with dynamic layering. The 140 BPM tempo creates intense combat atmosphere, with multi-layered synthesizer sound design demonstrating deep understanding of the Wwise interactive music framework.",
-        "tech_notes": "48kHz/24bit · Wwise Interactive Framework · Multi-layer Dynamic Mixing",
-        "tech_notes_zh": "48kHz/24bit · Wwise 交互框架 · 多层动态混音"
+        "description_zh": "一首为科幻题材游戏设计的多层交互式战斗音乐。作品以 30Hz 以下的次低频脉冲模拟太空飞船引擎的物理震动感，140 BPM 的高速工业节拍由经过失真处理的模块化合成器音序驱动。频率光谱从低音区的重力感震颤延伸至 12kHz 以上的金属质感高频碎片，在垂直维度上构建出层次分明的声音空间。音乐框架基于 Wwise 水平分层重分割与垂直叠加两种动态切换逻辑设计，涵盖探索、警戒、战斗三层强度状态，各层之间通过实时 RTPC 参数控制实现无缝过渡，适配游戏内实时状态变化的音乐响应需求。",
+        "description_en": "A multi-layered interactive combat music piece designed for sci-fi games. Sub-bass pulses below 30Hz simulate the physical vibration of spacecraft engines, while a 140 BPM industrial beat is driven by distorted modular synthesizer sequences. The frequency spectrum extends from gravitational low-end tremors to metallic high-frequency fragments above 12kHz, constructing a vertically deep sonic space. The music framework is built on Wwise Horizontal Re-segmentation and Vertical Layering dynamic switching logic, covering three intensity states — exploration, alert, and combat — with seamless transitions via real-time RTPC parameter control to adapt to in-game state changes.",
+        "tech": "48kHz/24bit · Wwise Interactive Framework · Multi-layer Dynamic Mixing · RTPC · State Switching",
+        "tech_zh": "48kHz/24bit · Wwise 交互框架 · 多层动态混音 · RTPC 参数控制 · 状态切换"
       },
       {
         "id": "experimental-ups-downs",
-        "title": "沉浮 (Ups & Downs)",
-        "title_zh": "实验电子音乐 — 沉浮",
-        "category": "Experimental Electronic",
-        "category_zh": "实验电子音乐",
+        "title": "沉浮",
+        "title_zh": "沉浮",
+        "category": "Experimental Electronic · Sound Art",
+        "category_zh": "实验电子音乐 · 声音艺术",
         "file": "assets/audio/experimental-ups-downs.mp3",
         "poster": "assets/images/poster-experimental.svg",
         "duration": "8:12",
-        "description": "一首长达八分钟的沉浸式实验电子作品。以 131 BPM 的推进节奏为基底，在暗色调的声音织体中探索「沉」与「浮」的二元对立——低沉的持续音与闪烁的高频碎片交织，宽阔的动态范围展现了丰富的情绪张力。",
-        "description_en": "An 8-minute immersive experimental electronic piece. Based on a 131 BPM driving rhythm, exploring the duality of 'sinking' and 'floating' through dark-toned sonic textures — deep drones interweave with shimmering high-frequency fragments, with wide dynamic range revealing rich emotional tension.",
-        "tech_notes": "48kHz/24bit · Experimental Sound Design · Extended Form",
-        "tech_notes_zh": "48kHz/24bit · 实验声音设计 · 长结构形式"
+        "description_zh": "一首时长八分钟的沉浸式电子声音叙事作品，以「沉」与「浮」的二元概念贯穿始终。低频持续音如深海暗流般缓慢涌动，构建出压抑而致密的声音基底；闪烁的高频粒子与颗粒合成音色则如气泡从深渊升起，在空间的高处碎裂为离散的回声。131 BPM 的节奏脉冲并非机械循环，而是随着情绪的起伏持续变形——时而凝聚为工业感强烈的四四拍推进段落，时而解构为自由的频谱漫游。超过 8 分钟的时长赋予了声音元素充分的演化空间，动态范围跨越多個音量级，从接近听觉阈值的微声到排山倒海的噪音墙，呈现了对电子音乐结构性叙事的深度探索。",
+        "description_en": "An eight-minute immersive electronic sonic narrative exploring the duality of submersion and emergence. Low-frequency drones flow like deep-sea currents, forming a dense, oppressive sonic foundation, while shimmering high-frequency particles and granular synthesis textures rise like bubbles from the abyss, fracturing into discrete echoes at the spatial ceiling. The 131 BPM rhythmic pulse continuously deforms with emotional arcs — at times condensing into industrial four-on-the-floor propulsion, at others deconstructing into free spectral drift. The extended duration allows full evolutionary space for sonic elements, with a dynamic range that spans from near-threshold whispers to overwhelming walls of noise, demonstrating deep exploration of structural narrative in electronic music.",
+        "tech": "48kHz/24bit · Granular Synthesis · Extended Form · Wide Dynamic Range · Spectral Evolution",
+        "tech_zh": "48kHz/24bit · 颗粒合成 · 长结构形式 · 大动态范围 · 频谱演化"
       },
       {
         "id": "electronic-beat",
         "title": "Electronic Beat",
-        "title_zh": "电子风格歌曲 — Beat",
-        "category": "Electronic Music Production",
-        "category_zh": "电子音乐制作",
+        "title_zh": "Electronic Beat",
+        "category": "Electronic Production · Synthwave / Pop",
+        "category_zh": "电子音乐制作 · Synthwave 流行电子",
         "file": "assets/audio/electronic-beat.mp3",
         "poster": "assets/images/poster-electronic.svg",
         "duration": "1:28",
-        "description": "一首精致的电子风格节奏作品。以 100 BPM 的中速律动为骨架，明亮的音色质感与清晰的谐波结构赋予其强烈的流行电子属性。旋律性强、结构紧凑，展现了对现代电子音乐制作技法的娴熟掌控。",
-        "description_en": "A refined electronic beat production. Built on a 100 BPM mid-tempo groove, bright timbral quality and clear harmonic structure give it strong pop-electronic character. Melodic, tightly structured, demonstrating skilled command of modern electronic music production techniques.",
-        "tech_notes": "48kHz/24bit · Electronic Production · Serum 2 / Omnisphere 2",
-        "tech_notes_zh": "48kHz/24bit · 电子制作 · Serum 2 / Omnisphere 2"
+        "description_zh": "一首结构精巧的流行电子器乐作品。100 BPM 的中速律动以经过瞬态塑形的底鼓和 crisp 拍手音色锚定节奏骨架，明亮的合成器主旋律线在 1-4kHz 的存在感频段中游走，叠加了宽声场立体声扩展与谐波饱和处理。副歌段落通过多层和声叠加、滤波器截止频率自动化与侧链压缩的呼吸感泵动效果制造推进力。曲风融合了 Synthwave 的复古模拟质感与现代 K-Pop 电子编曲的精细化制作手法，在商业音乐框架内展示了音色设计、混音平衡与结构编排的综合把控能力。",
+        "description_en": "A tightly crafted pop-electronic instrumental. The 100 BPM mid-tempo groove anchors its rhythmic skeleton with transient-shaped kick drums and crisp clap textures, while bright synthesizer lead lines navigate the 1-4kHz presence range, enhanced with wide-field stereo expansion and harmonic saturation. The chorus sections build momentum through multi-layer harmonic stacking, filter cutoff automation, and sidechain compression breathing effects. The style blends Synthwave's retro analog character with the refined production techniques of modern K-Pop electronic arrangement, showcasing comprehensive command of sound design, mix balance, and structural composition within a commercial music framework.",
+        "tech": "48kHz/24bit · Serum 2 · Omnisphere 2 · Sidechain Compression · Stereo Field Design",
+        "tech_zh": "48kHz/24bit · Serum 2 · Omnisphere 2 · 侧链压缩 · 立体声场设计"
       }
     ],
     "video": [
       {
         "id": "stranded",
         "title": "Stranded",
-        "title_zh": "传统管弦乐作品 — Stranded",
-        "category": "Traditional Orchestral",
-        "category_zh": "传统管弦乐",
+        "title_zh": "Stranded",
+        "category": "Orchestral Composition · Cinematic Narrative",
+        "category_zh": "传统管弦乐作品 · 电影化叙事",
         "file": "assets/video/stranded.mp4",
         "poster": "assets/images/poster-stranded.jpg",
         "duration": "6:15",
-        "description": "一部时长六分钟的管弦乐叙事作品。运用完整的管弦乐队编制，以传统和声语言构建戏剧性的音乐叙事。4K 画质配合精心设计的配器层次，展现了对古典管弦乐写作技法的深入理解与驾驭能力。",
-        "description_en": "A 6-minute orchestral narrative piece. Utilizing full orchestra instrumentation with traditional harmonic language to construct dramatic musical storytelling. 4K visuals paired with carefully designed orchestration layers demonstrate deep understanding and command of classical orchestral writing techniques.",
-        "tech_notes": "4K · Orchestral Arrangement · Narrative Composition",
-        "tech_notes_zh": "4K · 管弦乐编曲 · 叙事作曲"
+        "description_zh": "一部六分钟的管弦乐叙事作品，以完整的交响乐队编制讲述一段从风暴到救赎的声音旅程。开篇以低音弦乐的持续音簇与铜管的阴暗色彩铺陈压抑与不安，中段木管独奏引入脆弱而坚定的希望动机，随着弦乐声部的逐层叠加与和声张力的累积攀升，最终在全乐队的光辉齐奏中达到情感释放的顶点。作品融合了传统功能和声的对位技法与现代电影配乐的主题发展语汇，在古典管弦乐写作框架内注入了当代游戏音乐的戏剧性表达。4K 实录画面展示了从总谱写作、乐器编排到乐队录制的完整管弦乐制作流程。",
+        "description_en": "A six-minute orchestral narrative tracing a sonic journey from storm to redemption. The opening establishes oppression and unease through low string clusters and dark brass timbres; the middle section introduces a fragile yet determined hope motif via woodwind solo, and as string layers accumulate and harmonic tension escalates, the work culminates in a radiant full-orchestra tutti of emotional release. The composition integrates traditional functional harmony and counterpoint with modern film scoring thematic development, infusing classical orchestral writing with the dramatic expression of contemporary game music. The 4K recording showcases the complete orchestral production pipeline from score writing and instrumentation to live ensemble recording.",
+        "tech": "4K · Symphonic Orchestra · Theme Development · Live Recording · Full Production Pipeline",
+        "tech_zh": "4K · 交响乐团编制 · 主题发展 · 现场实录 · 完整制作管线"
       },
       {
         "id": "racheltjie",
         "title": "Racheltjie De Beer",
-        "title_zh": "影视配乐 — Racheltjie De Beer",
-        "category": "Film Scoring",
-        "category_zh": "影视配乐",
+        "title_zh": "Racheltjie De Beer",
+        "category": "Film Scoring · Audio-Visual Synchronization",
+        "category_zh": "影视配乐 · 音画同步",
         "file": "assets/video/racheltjie.mp4",
         "poster": "assets/images/poster-racheltjie.jpg",
         "duration": "1:42",
-        "description": "为影视片段创作的原创配乐作品。以细腻的情感表达为核心，通过精巧的和声进行与音色变化贴合画面叙事。4K 画面与音乐的高度同步展现了对影视配乐中「音画关系」的精准把握。",
-        "description_en": "Original film scoring work created for a cinematic sequence. Centered on delicate emotional expression, using refined harmonic progressions and timbral changes to match visual narrative. The high synchronization between 4K visuals and music demonstrates precise grasp of audio-visual relationships in film scoring.",
-        "tech_notes": "4K · Film Scoring · Audio-Visual Synchronization",
-        "tech_notes_zh": "4K · 影视配乐 · 音画同步"
+        "description_zh": "为南非历史题材影视片段创作的原声配乐。以钢琴的简约主题动机为情感锚点，弦乐四重奏的温暖织体逐层叠加，和声进行在平行大小调之间游移，精确跟随画面中人物情感的细微变化。配乐策略灵活结合了音画同步与情感对位两种手法——关键时刻的打击乐重音精准落在画面剪辑点上强化戏剧冲击，而背景层的持续和声则与画面形成独立的情感对位线条，在视觉叙事之上叠加了第二层声音叙事维度。4K 杜比声混音版本呈现了从作曲、录音到环绕声混音母带的完整影视配乐后期工作流。",
+        "description_en": "Original score composed for a South African historical film sequence. A minimalist piano motif serves as the emotional anchor, with warm string quartet textures layering in — the harmonic progressions shift between parallel major and minor modes, precisely tracking subtle emotional changes in the characters. The scoring strategy flexibly combines Mickey-Mousing and emotional counterpoint techniques — percussive accents land precisely on visual cut points to amplify dramatic impact, while sustained harmonic beds form an independent emotional counterpoint line against the image, adding a second layer of sonic narrative atop the visual storytelling. The 4K Dolby Atmos mix version demonstrates the complete film scoring post-production workflow from composition and recording to surround sound mastering.",
+        "tech": "4K · Dolby Atmos · Mickey-Mousing · Emotional Counterpoint · Surround Mix",
+        "tech_zh": "4K · 杜比全景声 · 音画同步 · 情感对位 · 环绕声混音"
       },
       {
         "id": "guimi-pv",
         "title": "诡秘之主 PV",
-        "title_zh": "游戏《诡秘之主》音乐 PV 制作",
-        "category": "Game Music PV",
-        "category_zh": "游戏音乐 PV",
+        "title_zh": "诡秘之主 PV",
+        "category": "Game Music PV · Atmospheric Sound Design",
+        "category_zh": "游戏音乐 PV · 氛围声音设计",
         "file": "assets/video/guimi-pv.mp4",
         "poster": "assets/images/poster-guimi.mp4.jpg",
         "duration": "0:43",
-        "description": "为热门游戏《诡秘之主》制作的音乐宣传视频。在43秒的紧凑时长内，通过精心编排的音乐与画面的完美配合，营造出诡秘、悬疑的氛围。展现了在短时间内高效传达游戏世界观与情感基调的能力。",
-        "description_en": "Music promotional video created for the popular game 'Lord of the Mysteries'. Within a compact 43-second duration, perfectly synchronized music and visuals create a mysterious, suspenseful atmosphere. Demonstrates ability to efficiently convey game world-building and emotional tone in a short format.",
-        "tech_notes": "1080p · Game Music PV · Atmospheric Design",
-        "tech_notes_zh": "1080p · 游戏音乐 PV · 氛围设计"
+        "description_zh": "为热门游戏 IP《诡秘之主》制作的 43 秒音乐宣传视频。在极致压缩的时间窗口内，通过克苏鲁式阴暗和声、不规则复合节奏型以及倒放钢琴采样与频谱拉伸处理，快速构建出诡谲而压抑的氛围基调。低频层采用减法合成器生成的次低音持续音提供不安的身体感，中频的颗粒化弦乐音色制造出克苏鲁式的触手缠绕感，高频的随机金属撞击声则在空间顶部增添了不确定的威胁信号。音乐与画面剪辑点精确到帧级别同步，配合低频的突然频谱抽离与瞬态骤入的惊悚效果，在短视频格式内高效完成了世界观建立、情绪铺垫与高潮释放的完整叙事弧线。",
+        "description_en": "A 43-second music promotional video created for the popular game IP 'Lord of the Mysteries'. Within an extremely compressed time window, the work rapidly constructs an eerie and oppressive atmospheric tone through Lovecraftian dark harmonies, irregular compound rhythm patterns, reversed piano samples, and spectral stretching. The low-frequency layer employs subtractive-synthesized sub-bass drones to deliver visceral unease; mid-frequency granular string textures evoke Lovecraftian tendril-like entanglement; high-frequency random metallic impacts add uncertain threat signals at the spatial ceiling. Music and visual cut points sync at frame-level precision — combined with sudden spectral subtraction in the lows and transient shock entries in the highs — efficiently delivering a complete narrative arc of world-building, tension accumulation, and climactic release within a short-form format.",
+        "tech": "1080p · Frame-precise Sync · Spectral Design · Granular Processing · Short-form Narrative Arc",
+        "tech_zh": "1080p · 帧级同步 · 频谱声音设计 · 颗粒处理 · 短视频叙事弧线"
       },
       {
         "id": "pinocchio-wwise",
-        "title": "Lies of P — Wwise 交互设计",
-        "title_zh": "游戏《匹诺曹的谎言》— Wwise 交互音乐设计",
-        "category": "Wwise Interactive Design",
-        "category_zh": "Wwise 交互设计",
+        "title": "Lies of P — Wwise Interactive Design",
+        "title_zh": "匹诺曹的谎言 — Wwise 交互设计",
+        "category": "Game Audio Middleware · Interactive Music System",
+        "category_zh": "游戏音频中间件 · 交互音乐系统",
         "file": "assets/video/pinocchio-wwise.mp4",
         "poster": "assets/images/poster-pinocchio.jpg",
         "duration": "5:17",
-        "description": "以《匹诺曹的谎言》为案例的 Wwise 交互音乐设计演示。完整展示了游戏音频中间件的核心工作流程：从音乐资源的分层管理、状态切换逻辑、实时 RTPC 参数控制到引擎内最终落地。呈现了一个完整、可投产的游戏音频交互框架。",
-        "description_en": "Wwise interactive music design demonstration using 'Lies of P' as a case study. Comprehensively showcases the core workflow of game audio middleware: from layered management of music assets, state-switching logic, real-time RTPC parameter control to final in-engine implementation. Presents a complete, production-ready game audio interactive framework.",
-        "tech_notes": "Wwise · Interactive Music Framework · RTPC · State Switching",
-        "tech_notes_zh": "Wwise · 交互音乐框架 · RTPC · 状态切换"
-      }
-    ]
-  },
-  "skills": {
-    "daws": [
-      {
-        "name": "Cubase",
-        "icon": "🎛️"
-      },
-      {
-        "name": "Pro Tools",
-        "icon": "🎚️"
-      },
-      {
-        "name": "Logic Pro",
-        "icon": "💻"
-      },
-      {
-        "name": "Reaper",
-        "icon": "🔧"
-      },
-      {
-        "name": "Sibelius",
-        "icon": "📜"
-      }
-    ],
-    "audio_middleware": [
-      {
-        "name": "Wwise",
-        "icon": "🔊"
-      },
-      {
-        "name": "Unity Audio",
-        "icon": "🎮"
-      },
-      {
-        "name": "UE5 Audio",
-        "icon": "🎯"
-      }
-    ],
-    "plugins_synths": [
-      {
-        "name": "Waves",
-        "icon": "🌊"
-      },
-      {
-        "name": "FabFilter",
-        "icon": "🎛️"
-      },
-      {
-        "name": "Soundtoys",
-        "icon": "🧸"
-      },
-      {
-        "name": "Ozone",
-        "icon": "☁️"
-      },
-      {
-        "name": "GRM Tools",
-        "icon": "🔬"
-      },
-      {
-        "name": "Serum 2",
-        "icon": "⚡"
-      },
-      {
-        "name": "Omnisphere 2",
-        "icon": "🌌"
-      }
-    ],
-    "ai_tools": [
-      {
-        "name": "Suno",
-        "icon": "🤖"
-      },
-      {
-        "name": "ACE Studio 2",
-        "icon": "🎤"
-      },
-      {
-        "name": "Udio",
-        "icon": "🎵"
-      }
-    ],
-    "other": [
-      {
-        "name": "Python 脚本开发",
-        "name_en": "Python Scripting",
-        "icon": "🐍"
-      },
-      {
-        "name": "音频批处理工具",
-        "name_en": "Audio Batch Processing",
-        "icon": "⚙️"
-      },
-      {
-        "name": "版本控制 Git",
-        "name_en": "Git Version Control",
-        "icon": "📝"
-      }
-    ]
-  },
-  "experience": [
-    {
-      "company": "深圳腾娱互动科技有限公司",
-      "company_en": "Shenzhen Tengyu Interactive Technology",
-      "role": "音频策划",
-      "role_en": "Audio Designer",
-      "period": "2026.01 — 2026.04",
-      "project": "《英雄联盟手游》League of Legends: Wild Rift",
-      "details": [
-        "负责项目整体音乐风格把控及全流程跟进：需求整理、音乐制作、Wwise 搭建、引擎内落地调试",
-        "完成告白气球、马年限定蕊雪盈春等系列局内皮肤音乐及展示音乐制作",
-        "负责 Wwise 核心逻辑框架搭建及 Unity 侧复杂音乐逻辑方案实现",
-        "审核监修内外产出的音乐资源，推进与海外合作方的国际音频制作协调"
-      ],
-      "details_en": [
-        "Led overall music style direction and full pipeline: requirements, music production, Wwise implementation, in-engine debugging",
-        "Produced in-game skin music and showcase music for multiple League of Legends: Wild Rift skin series",
-        "Built Wwise core logic framework and implemented complex music logic solutions in Unity",
-        "Reviewed and supervised internal and external music assets, coordinated international audio production with overseas partners"
-      ]
-    },
-    {
-      "company": "西山居",
-      "company_en": "Seasun Games",
-      "role": "游戏音乐制作人",
-      "role_en": "Game Music Producer",
-      "period": "2025.07 — 2025.09",
-      "project": "音频训练营 Audio Training Camp",
-      "details": [
-        "参加西山居音频训练营，系统学习游戏音乐制作全流程：作曲、作词、编曲、混音、母带",
-        "学习横向/纵向互动音乐制作逻辑，战斗胜利/失败音乐、事件音乐、登陆音乐及主题曲制作",
-        "掌握 Wwise 音频中间件设计逻辑，独立设计并实现游戏内完整可落地的音乐交互框架"
-      ],
-      "details_en": [
-        "Participated in Seasun Audio Training Camp, systematically learned game music production: composition, lyrics, arrangement, mixing, mastering",
-        "Studied horizontal/vertical interactive music logic, combat victory/defeat music, event music, login music, and theme song production",
-        "Mastered Wwise audio middleware design logic, independently designed and implemented production-ready in-game music interactive frameworks"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "school": "爱丁堡大学",
-      "school_en": "University of Edinburgh",
-      "degree": "作曲专业 · 硕士",
-      "degree_en": "MSc in Composition",
-      "period": "2024.09 — 2025.11",
-      "details": [
-        "课程涵盖游戏音乐制作、电影配乐、游戏音频技术",
-        "参与爱丁堡杜比声声音实验室混音课程",
-        "为皇家艺术学院设计作品《Attraction》配乐、音效及杜比声混音"
-      ],
-      "details_en": [
-        "Coursework: game music production, film scoring, game audio technology",
-        "Participated in Dolby Atmos sound lab mixing courses",
-        "Composed music, sound effects, and Dolby Atmos mix for RCA design work 'Attraction'"
-      ]
-    },
-    {
-      "school": "浙江音乐学院",
-      "school_en": "Zhejiang Conservatory of Music",
-      "degree": "音乐设计与制作 · 本科",
-      "degree_en": "B.A. in Music Design & Production",
-      "period": "2020.09 — 2024.07",
-      "details": [
-        "GPA 3.95，专业排名前 5%",
-        "连续三年获优秀学生一、二等奖学金及专业优秀奖学金",
-        "浙江省优秀毕业生",
-        "获「E创杯」电子音乐专业组优秀奖，作品参展「汇创青春」展演"
-      ],
-      "details_en": [
-        "GPA 3.95, Top 5% in major",
-        "Awarded Excellent Student Scholarship for three consecutive years",
-        "Zhejiang Province Outstanding Graduate",
-        "Won Excellence Award at E-Creation Cup, works exhibited at Huichuang Youth Exhibition"
-      ]
-    }
-  ],
-  "gaming": {
-    "intro": "10+ 年游戏经验，Steam 总时长 3000+ 小时，深入理解各类游戏的音乐设计语言。",
-    "intro_en": "10+ years gaming experience, 3000+ hours on Steam. Deep understanding of music design language across game genres.",
-    "games": [
-      {
-        "name": "王者荣耀",
-        "name_en": "Honor of Kings",
-        "hours": "2500h+",
-        "rank": "国服高渐离"
-      },
-      {
-        "name": "CS:GO",
-        "name_en": "CS:GO",
-        "hours": "1500h+"
-      },
-      {
-        "name": "永劫无间",
-        "name_en": "Naraka: Bladepoint",
-        "hours": "500h+",
-        "rank": "坠日2"
-      },
-      {
-        "name": "洛克王国",
-        "name_en": "Rock Kingdom",
-        "hours": "300h+"
+        "description_zh": "以类魂动作游戏《匹诺曹的谎言》为蓝本的 Wwise 交互音乐设计完整技术演示。视频系统展示了从 DAW 音乐资源分层导出、Wwise 内事件与状态组配置、RTPC 实时参数控制映射到 Unity 引擎侧最终落地的全技术管线。核心亮点为「垂直叠加动态混音系统」的实现——通过将音乐拆分为环境层、节奏层、旋律层、强化层四条独立轨道，并分别映射血量百分比、玩家与敌人距离、战斗强度等级等游戏实时参数，实现对每层音轨音量、低通滤波截止频率、混响发送量的独立 RTPC 控制。最终实现从探索状态到 Boss 战状态的无缝音乐过渡，无明显的段落切换痕迹。演示还包含 Switch 容器内随机播放逻辑与 Transition 片段过渡时间的精细化调校。",
+        "description_en": "A comprehensive technical demonstration of Wwise interactive music design based on the Soulslike action game 'Lies of P'. The video systematically presents the full technical pipeline from layered DAW music asset export, Wwise Event and State Group configuration, and RTPC real-time parameter mapping, to final Unity engine-side implementation. The core highlight is the Vertical Layering Dynamic Mix System — by splitting the music into four independent stems (ambient layer, rhythm layer, melody layer, intensity layer) and mapping each to real-time game parameters such as HP percentage, player-enemy distance, and combat intensity level, independent RTPC control is achieved for each stem's volume, low-pass filter cutoff frequency, and reverb send amount. The result is seamless musical transition from exploration state to boss combat state with no perceptible segment switching. The demonstration also covers randomized playback logic within Switch Containers and fine-tuned Transition segment timing.",
+        "tech": "Wwise · Vertical Layering · RTPC Mapping · State Groups · Switch Containers · Unity Integration",
+        "tech_zh": "Wwise · 垂直叠加 · RTPC 参数映射 · 状态组 · Switch 容器 · Unity 引擎集成"
       }
     ]
   },
   "contact": {
     "email": "15706778301@163.com",
     "phone": "15706778301",
-    "location": "深圳市宝安区",
-    "location_en": "Bao'an, Shenzhen",
-    "wechat": "",
-    "bilibili": "",
-    "github": ""
-  },
-  "footer": {
-    "copyright": "© 2026 颜孙恒 Yan Sunheng. All Rights Reserved.",
-    "credit": "Designed & Built with passion for game music."
+    "location": "Shenzhen / Global Remote",
+    "location_zh": "深圳 / 全球远程"
   }
 };

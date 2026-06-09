@@ -3,289 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="颜孙恒 | 游戏音乐设计师 - Game Music Designer & Composer. 专注于游戏交互音乐、电子音乐与管弦乐创作。">
-    <meta name="keywords" content="游戏音乐, 音乐设计师, Wwise, 作曲, 电子音乐, 管弦乐, Game Music, Composer">
-    <meta name="author" content="颜孙恒 Yan Sunheng">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="颜孙恒 | 游戏音乐设计师">
-    <meta property="og:description" content="Crafting Immersive Sonic Worlds for Interactive Media">
+    <meta name="description" content="Game Music Designer & Composer — Interactive Audio · Electronic · Orchestral">
+    <meta property="og:title" content="YS — Game Music Portfolio">
+    <meta property="og:description" content="Interactive Game Music · Electronic Production · Orchestral Composition">
     <meta property="og:type" content="website">
-
-    <title>颜孙恒 | 游戏音乐设计师</title>
-
-    <!-- Favicon -->
+    <title>YS — Game Music Portfolio</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Noise Texture Overlay -->
-    <div class="noise-overlay" aria-hidden="true"></div>
 
-    <!-- Grid Pattern -->
-    <div class="grid-pattern" aria-hidden="true"></div>
+    <!-- Grid overlay -->
+    <canvas class="bg-grid" id="bgGrid" aria-hidden="true"></canvas>
 
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor" aria-hidden="true"></div>
-    <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+    <!-- Scan line effect -->
+    <div class="scanlines" aria-hidden="true"></div>
 
-    <!-- ====== NAVIGATION ====== -->
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo">YS</a>
-            <div class="nav-links">
-                <a href="#works" class="nav-link" data-text="作品">作品</a>
-                <a href="#about" class="nav-link" data-text="关于">关于</a>
-                <a href="#skills" class="nav-link" data-text="技能">技能</a>
-                <a href="#experience" class="nav-link" data-text="经历">经历</a>
-                <a href="#contact" class="nav-link" data-text="联系">联系</a>
-            </div>
-            <button class="lang-toggle" id="langToggle" aria-label="Switch Language">
-                <span class="lang-option active" data-lang="zh">中</span>
-                <span class="lang-divider">/</span>
-                <span class="lang-option" data-lang="en">EN</span>
-            </button>
-            <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+    <!-- Corner logo -->
+    <a href="#" class="corner-logo" aria-label="Home">
+        <svg viewBox="0 0 40 40" width="40" height="40">
+            <rect x="2" y="2" width="36" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+            <text x="20" y="27" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="18" font-weight="700" fill="currentColor">YS</text>
+        </svg>
+    </a>
+
+    <!-- Language toggle -->
+    <button class="lang-switch" id="langSwitch" aria-label="Switch language">
+        <span class="lang-opt active" data-l="zh">中</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" data-l="en">EN</span>
+    </button>
+
+    <!-- Audio player (hidden, global) -->
+    <audio id="globalAudio" preload="none"></audio>
+
+    <!-- ====== HERO ====== -->
+    <header class="hero" id="top">
+        <div class="hero-visual" aria-hidden="true">
+            <canvas id="heroViz"></canvas>
         </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-inner">
-            <a href="#works" class="mobile-link" data-text="作品集">作品集</a>
-            <a href="#about" class="mobile-link" data-text="关于我">关于我</a>
-            <a href="#skills" class="mobile-link" data-text="技能树">技能树</a>
-            <a href="#experience" class="mobile-link" data-text="职业经历">职业经历</a>
-            <a href="#contact" class="mobile-link" data-text="联系方式">联系方式</a>
-            <div class="mobile-lang">
-                <button class="lang-switch-mobile active" data-lang="zh">中文</button>
-                <button class="lang-switch-mobile" data-lang="en">English</button>
+        <div class="hero-text">
+            <p class="hero-label" data-zh="GAME MUSIC DESIGNER & COMPOSER" data-en="GAME MUSIC DESIGNER & COMPOSER">GAME MUSIC DESIGNER & COMPOSER</p>
+            <p class="hero-sub" data-zh="交互音频 · 电子音乐 · 管弦乐 · Wwise" data-en="Interactive Audio · Electronic · Orchestral · Wwise">交互音频 · 电子音乐 · 管弦乐 · Wwise</p>
+            <div class="hero-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- ====== HERO SECTION ====== -->
-    <section class="hero" id="hero">
-        <div class="hero-bg-glow"></div>
-        <div class="hero-bg-particles" id="particles" aria-hidden="true"></div>
-        <div class="hero-content">
-            <div class="hero-pre-title">
-                <span class="hero-line"></span>
-                <span class="hero-pre-text" data-zh="游戏音乐设计师" data-en="Game Music Designer & Composer">游戏音乐设计师</span>
-                <span class="hero-line"></span>
-            </div>
-            <h1 class="hero-name">
-                <span class="hero-name-cn" data-zh="颜孙恒" data-en="Yan Sunheng">
-                    <span class="char" style="--i:0">颜</span>
-                    <span class="char" style="--i:1">孙</span>
-                    <span class="char" style="--i:2">恒</span>
-                </span>
-            </h1>
-            <p class="hero-intro" data-zh="专注于游戏交互音乐设计、电子音乐制作与管弦乐编曲。擅长运用 Wwise 音频中间件构建沉浸式游戏音效体验，致力于在交互媒体中创造独特的声音世界。" data-en="Specializing in interactive game music design, electronic music production, and orchestral arrangement. Proficient in building immersive game audio experiences with Wwise audio middleware, dedicated to creating unique sonic worlds in interactive media.">
-                专注于游戏交互音乐设计、电子音乐制作与管弦乐编曲。擅长运用 Wwise 音频中间件构建沉浸式游戏音效体验，致力于在交互媒体中创造独特的声音世界。
-            </p>
-            <div class="hero-cta">
-                <a href="#works" class="btn-primary" data-zh="探索作品集" data-en="Explore Portfolio">探索作品集</a>
-                <a href="#contact" class="btn-secondary" data-zh="联系我" data-en="Contact Me">联系我</a>
-            </div>
-            <div class="hero-location" data-zh="📍 深圳 / 全球远程" data-en="📍 Shenzhen / Global Remote">📍 深圳 / 全球远程</div>
-        </div>
-        <div class="scroll-indicator" aria-hidden="true">
-            <span class="scroll-text" data-zh="向下滚动" data-en="Scroll">向下滚动</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- ====== WORKS SECTION ====== -->
-    <section class="works" id="works">
-        <div class="section-header">
-            <span class="section-number">01</span>
-            <h2 class="section-title" data-zh="作品集" data-en="Portfolio">作品集</h2>
-            <p class="section-subtitle" data-zh="游戏音乐 · 电子音乐 · 管弦乐 · 影视配乐 · Wwise 交互设计" data-en="Game Music · Electronic · Orchestral · Film Scoring · Wwise Interactive">游戏音乐 · 电子音乐 · 管弦乐 · 影视配乐 · Wwise 交互设计</p>
-        </div>
-
-        <!-- Audio Works -->
-        <div class="works-category">
-            <h3 class="category-title">
-                <span class="category-icon">🎧</span>
-                <span data-zh="音乐作品" data-en="Music Works">音乐作品</span>
-                <span class="category-line"></span>
-            </h3>
-            <div class="works-grid" id="audioWorks"></div>
-        </div>
-
-        <!-- Video Works -->
-        <div class="works-category">
-            <h3 class="category-title">
-                <span class="category-icon">🎬</span>
-                <span data-zh="视频作品" data-en="Video Works">视频作品</span>
-                <span class="category-line"></span>
-            </h3>
-            <div class="works-grid works-grid-video" id="videoWorks"></div>
-        </div>
-    </section>
-
-    <!-- ====== ABOUT SECTION ====== -->
-    <section class="about" id="about">
-        <div class="about-bg-glow"></div>
-        <div class="section-header">
-            <span class="section-number">02</span>
-            <h2 class="section-title" data-zh="关于我" data-en="About">关于我</h2>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <p class="about-bio" data-zh="硕士毕业于爱丁堡大学作曲专业，本科毕业于浙江音乐学院音乐设计与制作专业（GPA 3.95，专业前5%）。拥有西山居游戏音乐制作经历及腾讯《英雄联盟手游》音频策划经验。擅长电子乐与管弦乐的制作，语音后期及混音母带制作，对音乐有较高的审美追求。" data-en="MSc in Composition from the University of Edinburgh, B.A. in Music Design & Production from Zhejiang Conservatory of Music (GPA 3.95, Top 5%). Professional experience at Seasun Games and Tencent's League of Legends: Wild Rift as an audio designer. Specialized in electronic and orchestral music production with high aesthetic standards.">
-                    硕士毕业于爱丁堡大学作曲专业，本科毕业于浙江音乐学院音乐设计与制作专业（GPA 3.95，专业前5%）。拥有西山居游戏音乐制作经历及腾讯《英雄联盟手游》音频策划经验。擅长电子乐与管弦乐的制作，语音后期及混音母带制作，对音乐有较高的审美追求。
-                </p>
-                <div class="about-highlights" id="aboutHighlights"></div>
-            </div>
-            <div class="about-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="10">10+</span>
-                    <span class="stat-label" data-zh="年游戏经验" data-en="Years Gaming">年游戏经验</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="3000">3000h+</span>
-                    <span class="stat-label" data-zh="Steam 时长" data-en="Steam Hours">Steam 时长</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="3.95">3.95</span>
-                    <span class="stat-label" data-zh="本科 GPA" data-en="GPA (Undergrad)">本科 GPA</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="6.5">6.5</span>
-                    <span class="stat-label" data-zh="雅思成绩" data-en="IELTS Score">雅思成绩</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== SKILLS SECTION ====== -->
-    <section class="skills" id="skills">
-        <div class="section-header">
-            <span class="section-number">03</span>
-            <h2 class="section-title" data-zh="技能树" data-en="Skills">技能树</h2>
-            <p class="section-subtitle" data-zh="技术栈与创作工具" data-en="Tech Stack & Creative Tools">技术栈与创作工具</p>
-        </div>
-        <div class="skills-grid" id="skillsGrid"></div>
-    </section>
-
-    <!-- ====== EXPERIENCE SECTION ====== -->
-    <section class="experience" id="experience">
-        <div class="section-header">
-            <span class="section-number">04</span>
-            <h2 class="section-title" data-zh="职业经历" data-en="Experience">职业经历</h2>
-        </div>
-        <div class="timeline" id="timeline"></div>
-    </section>
-
-    <!-- ====== EDUCATION SECTION ====== -->
-    <section class="education" id="education">
-        <div class="section-header">
-            <span class="section-number">05</span>
-            <h2 class="section-title" data-zh="教育背景" data-en="Education">教育背景</h2>
-        </div>
-        <div class="edu-grid" id="eduGrid"></div>
-    </section>
-
-    <!-- ====== GAMING SECTION ====== -->
-    <section class="gaming" id="gaming">
-        <div class="gaming-content">
-            <div class="section-header">
-                <span class="section-number">06</span>
-                <h2 class="section-title" data-zh="游戏基因" data-en="Gaming DNA">游戏基因</h2>
-                <p class="section-subtitle" data-zh="10+ 年游戏经验，深入理解各类游戏的音乐设计语言" data-en="10+ years gaming experience, deep understanding of music design language across game genres">
-                    10+ 年游戏经验，深入理解各类游戏的音乐设计语言
-                </p>
-            </div>
-            <div class="gaming-grid" id="gamingGrid"></div>
-        </div>
-    </section>
-
-    <!-- ====== CONTACT SECTION ====== -->
-    <section class="contact" id="contact">
-        <div class="section-header">
-            <span class="section-number">07</span>
-            <h2 class="section-title" data-zh="联系我" data-en="Contact">联系我</h2>
-            <p class="section-subtitle" data-zh="期待与您合作，共同创造令人难忘的游戏声音体验" data-en="Looking forward to collaborating and creating unforgettable game audio experiences">
-                期待与您合作，共同创造令人难忘的游戏声音体验
-            </p>
-        </div>
-        <div class="contact-grid" id="contactGrid"></div>
-    </section>
+    <!-- ====== WORKS ====== -->
+    <main class="works-container" id="worksContainer">
+        <!-- Dynamically rendered -->
+    </main>
 
     <!-- ====== FOOTER ====== -->
     <footer class="footer">
-        <div class="footer-wave" aria-hidden="true">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0 C300,80 600,0 900,60 C1050,100 1150,80 1200,60 L1200,120 L0,120 Z" fill="currentColor"/>
-            </svg>
-        </div>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <span class="footer-logo">YS</span>
-                <span class="footer-name">颜孙恒 Yan Sunheng</span>
-            </div>
-            <div class="footer-text">
-                <p>© 2026 颜孙恒 Yan Sunheng. All Rights Reserved.</p>
-                <p class="footer-credit">Crafted with passion for game music.</p>
-            </div>
-            <a href="#hero" class="back-to-top" aria-label="Back to top">
-                <span>↑</span>
+        <div class="footer-inner">
+            <a href="mailto:15706778301@163.com" class="footer-link">
+                <span class="footer-dot"></span>
+                15706778301@163.com
             </a>
+            <span class="footer-sep">·</span>
+            <span class="footer-loc" data-zh="深圳 / 全球远程" data-en="Shenzhen / Global Remote">深圳 / 全球远程</span>
+            <span class="footer-sep">·</span>
+            <span class="footer-copy">© 2026</span>
         </div>
     </footer>
 
+    <!-- ====== MODALS ====== -->
     <!-- Audio Player Modal -->
-    <div class="audio-modal" id="audioModal">
-        <div class="audio-modal-backdrop" id="audioModalBackdrop"></div>
-        <div class="audio-modal-content">
-            <button class="audio-modal-close" id="audioModalClose">✕</button>
-            <div class="audio-modal-visualizer" id="audioVisualizer"></div>
-            <div class="audio-modal-info">
-                <h3 id="audioModalTitle"></h3>
-                <p id="audioModalCategory"></p>
-                <p id="audioModalDesc"></p>
+    <div class="modal" id="audioModal">
+        <div class="modal-backdrop" id="audioBackdrop"></div>
+        <div class="modal-panel">
+            <button class="modal-close" id="audioClose" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="modal-viz">
+                <canvas id="audioVizCanvas"></canvas>
             </div>
-            <div class="audio-modal-player">
-                <button class="ap-btn ap-prev" id="apPrev">⏮</button>
-                <button class="ap-btn ap-play" id="apPlay">▶</button>
-                <button class="ap-btn ap-next" id="apNext">⏭</button>
-                <div class="ap-progress-container">
-                    <span class="ap-time" id="apCurrentTime">0:00</span>
-                    <div class="ap-progress" id="apProgress">
-                        <div class="ap-progress-fill" id="apProgressFill"></div>
+            <div class="modal-body">
+                <span class="modal-cat" id="audioCat"></span>
+                <h2 class="modal-title" id="audioTitle"></h2>
+                <p class="modal-desc" id="audioDesc"></p>
+                <div class="modal-tech" id="audioTech"></div>
+            </div>
+            <div class="modal-controls">
+                <button class="ctrl-btn" id="apPrev" aria-label="Previous">◂</button>
+                <button class="ctrl-btn ctrl-play" id="apPlay" aria-label="Play">▶</button>
+                <button class="ctrl-btn" id="apNext" aria-label="Next">▸</button>
+                <div class="ctrl-track">
+                    <span class="ctrl-time" id="apCur">0:00</span>
+                    <div class="ctrl-bar" id="apBar">
+                        <div class="ctrl-fill" id="apFill"></div>
                     </div>
-                    <span class="ap-time" id="apDuration">0:00</span>
+                    <span class="ctrl-time" id="apDur">0:00</span>
                 </div>
-                <div class="ap-volume">
-                    <span>🔈</span>
-                    <input type="range" id="apVolume" min="0" max="100" value="80" class="ap-volume-slider">
+                <div class="ctrl-vol">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                    <input type="range" id="apVol" min="0" max="100" value="80">
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Video Player Modal -->
-    <div class="video-modal" id="videoModal">
-        <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
-        <div class="video-modal-content">
-            <button class="video-modal-close" id="videoModalClose">✕</button>
-            <div class="video-wrapper">
-                <video id="videoPlayer" controls playsinline></video>
+    <div class="modal" id="videoModal">
+        <div class="modal-backdrop" id="videoBackdrop"></div>
+        <div class="modal-panel modal-panel-video">
+            <button class="modal-close" id="videoClose" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="video-wrap">
+                <video id="videoEl" controls playsinline preload="none"></video>
             </div>
-            <div class="video-modal-info">
-                <h3 id="videoModalTitle"></h3>
-                <p id="videoModalCategory"></p>
-                <p id="videoModalDesc"></p>
+            <div class="modal-body">
+                <span class="modal-cat" id="videoCat"></span>
+                <h2 class="modal-title" id="videoTitle"></h2>
+                <p class="modal-desc" id="videoDesc"></p>
+                <div class="modal-tech" id="videoTech"></div>
             </div>
         </div>
     </div>
