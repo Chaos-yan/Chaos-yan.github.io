@@ -11,123 +11,81 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Grid overlay -->
-    <canvas class="bg-grid" id="bgGrid" aria-hidden="true"></canvas>
-
-    <!-- Scan line effect -->
-    <div class="scanlines" aria-hidden="true"></div>
-
-    <!-- Corner logo -->
-    <a href="#" class="corner-logo" aria-label="Home">
-        <svg viewBox="0 0 40 40" width="40" height="40">
-            <rect x="2" y="2" width="36" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-            <text x="20" y="27" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="18" font-weight="700" fill="currentColor">YS</text>
-        </svg>
-    </a>
-
-    <!-- Language toggle -->
-    <button class="lang-switch" id="langSwitch" aria-label="Switch language">
-        <span class="lang-opt active" data-l="zh">中</span>
-        <span class="lang-sep">/</span>
-        <span class="lang-opt" data-l="en">EN</span>
-    </button>
-
-    <!-- Audio player (hidden, global) -->
-    <audio id="globalAudio" preload="none"></audio>
-
-    <!-- ====== HERO ====== -->
-    <header class="hero" id="top">
-        <div class="hero-visual" aria-hidden="true">
-            <canvas id="heroViz"></canvas>
-        </div>
-        <div class="hero-text">
-            <p class="hero-label" data-zh="GAME MUSIC DESIGNER & COMPOSER" data-en="GAME MUSIC DESIGNER & COMPOSER">GAME MUSIC DESIGNER & COMPOSER</p>
-            <p class="hero-sub" data-zh="交互音频 · 电子音乐 · 管弦乐 · Wwise" data-en="Interactive Audio · Electronic · Orchestral · Wwise">交互音频 · 电子音乐 · 管弦乐 · Wwise</p>
-            <div class="hero-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-        </div>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo">YS</a>
+        <button class="lang-btn" id="langBtn">
+            <span class="opt on" data-l="zh">中</span>
+            <span class="opt" data-l="en">EN</span>
+        </button>
     </header>
 
-    <!-- ====== WORKS ====== -->
-    <main class="works-container" id="worksContainer">
-        <!-- Dynamically rendered -->
-    </main>
+    <!-- Hero -->
+    <section class="hero">
+        <p class="hero-tag">Game Music Designer & Composer</p>
+        <p class="hero-desc" data-zh="交互音频设计 <span>·</span> 电子音乐制作 <span>·</span> 管弦乐写作 <span>·</span> Wwise中间件" data-en="Interactive Audio <span>·</span> Electronic Production <span>·</span> Orchestral <span>·</span> Wwise">交互音频设计 <span>·</span> 电子音乐制作 <span>·</span> 管弦乐写作 <span>·</span> Wwise中间件</p>
+    </section>
 
-    <!-- ====== FOOTER ====== -->
+    <!-- Works -->
+    <main class="works" id="works"></main>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-inner">
-            <a href="mailto:15706778301@163.com" class="footer-link">
-                <span class="footer-dot"></span>
-                15706778301@163.com
-            </a>
+            <a href="mailto:15706778301@163.com" class="footer-link"><span class="dot"></span>15706778301@163.com</a>
             <span class="footer-sep">·</span>
-            <span class="footer-loc" data-zh="深圳 / 全球远程" data-en="Shenzhen / Global Remote">深圳 / 全球远程</span>
+            <span data-zh="深圳 / 全球远程" data-en="Shenzhen / Global Remote">深圳 / 全球远程</span>
             <span class="footer-sep">·</span>
-            <span class="footer-copy">© 2026</span>
+            <span>© 2026</span>
         </div>
     </footer>
 
-    <!-- ====== MODALS ====== -->
-    <!-- Audio Player Modal -->
+    <!-- Audio Modal -->
     <div class="modal" id="audioModal">
-        <div class="modal-backdrop" id="audioBackdrop"></div>
-        <div class="modal-panel">
-            <button class="modal-close" id="audioClose" aria-label="Close">
-                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
-            <div class="modal-viz">
-                <canvas id="audioVizCanvas"></canvas>
-            </div>
-            <div class="modal-body">
-                <span class="modal-cat" id="audioCat"></span>
-                <h2 class="modal-title" id="audioTitle"></h2>
-                <p class="modal-desc" id="audioDesc"></p>
-                <div class="modal-tech" id="audioTech"></div>
-            </div>
-            <div class="modal-controls">
-                <button class="ctrl-btn" id="apPrev" aria-label="Previous">◂</button>
-                <button class="ctrl-btn ctrl-play" id="apPlay" aria-label="Play">▶</button>
-                <button class="ctrl-btn" id="apNext" aria-label="Next">▸</button>
+        <div class="modal-bg" id="audioBg"></div>
+        <div class="modal-box">
+            <button class="modal-x" id="audioX">✕</button>
+            <div class="modal-viz"><canvas id="audioViz"></canvas></div>
+            <span class="modal-cat" id="audioCat"></span>
+            <h2 class="modal-title" id="audioTitle"></h2>
+            <p class="modal-desc" id="audioDesc"></p>
+            <div class="modal-tech" id="audioTech"></div>
+            <div class="modal-ctrl">
+                <button class="ctrl-btn" id="apPrev">◂</button>
+                <button class="ctrl-btn ctrl-play" id="apPlay">▶</button>
+                <button class="ctrl-btn" id="apNext">▸</button>
                 <div class="ctrl-track">
                     <span class="ctrl-time" id="apCur">0:00</span>
-                    <div class="ctrl-bar" id="apBar">
-                        <div class="ctrl-fill" id="apFill"></div>
-                    </div>
+                    <div class="ctrl-bar" id="apBar"><div class="ctrl-fill" id="apFill"></div></div>
                     <span class="ctrl-time" id="apDur">0:00</span>
                 </div>
                 <div class="ctrl-vol">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                    <span>Vol</span>
                     <input type="range" id="apVol" min="0" max="100" value="80">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Video Player Modal -->
+    <!-- Video Modal -->
     <div class="modal" id="videoModal">
-        <div class="modal-backdrop" id="videoBackdrop"></div>
-        <div class="modal-panel modal-panel-video">
-            <button class="modal-close" id="videoClose" aria-label="Close">
-                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
-            <div class="video-wrap">
-                <video id="videoEl" controls playsinline preload="none"></video>
-            </div>
-            <div class="modal-body">
-                <span class="modal-cat" id="videoCat"></span>
-                <h2 class="modal-title" id="videoTitle"></h2>
-                <p class="modal-desc" id="videoDesc"></p>
-                <div class="modal-tech" id="videoTech"></div>
-            </div>
+        <div class="modal-bg" id="videoBg"></div>
+        <div class="modal-box wide">
+            <button class="modal-x" id="videoX">✕</button>
+            <div class="video-wrap"><video id="videoEl" controls playsinline preload="none"></video></div>
+            <span class="modal-cat" id="videoCat"></span>
+            <h2 class="modal-title" id="videoTitle"></h2>
+            <p class="modal-desc" id="videoDesc"></p>
+            <div class="modal-tech" id="videoTech"></div>
         </div>
     </div>
 
+    <audio id="globalAudio" preload="none"></audio>
     <script src="data/content.js"></script>
     <script src="js/main.js"></script>
 </body>
